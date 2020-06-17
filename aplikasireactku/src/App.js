@@ -17,10 +17,11 @@ import {
 const App = () => {
   return (<BrowserRouter >
     <NavbarComp />
-    <Switch >
+    <switch >
       <Route exact path="/"component={HomePage}/> 
-      <Route exact path="/about"component={About}/> 
-      </Switch> 
+      <Route exact path="/about"component={About}/>
+
+      </switch> 
 
       </BrowserRouter>
 
