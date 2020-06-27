@@ -16,9 +16,9 @@ function AboutComp() {
                 </Jumbotron>
                 <Container>
                     <Row>
-                        <Col><CardComp/></Col>
-                        <Col><CardComp/></Col>
-                        <Col><CardComp/></Col>
+                        <Col><CardComp id="1" judul="Belajar React" tanggal="27/06/2020"/></Col>
+                        <Col><CardComp id="2" judul="Belajar Golang" tanggal="28/06/2020"/></Col>
+                        <Col><CardComp id="3" judul="Belajar PHP" tanggal="29/06/2020"/></Col>
                     </Row>
                 </Container>
             </div>
