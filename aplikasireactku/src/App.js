@@ -7,7 +7,8 @@ import About from './Component/Fungsional/AboutComp';
 import {
   Navbar
 } from 'reactstrap';
-import DetailComp from './Component/Fungsional/DetailComp';
+//import DetailComp from './Component/Fungsional/DetailComp';
+import ListComp from './Component/Class/ListComp';
 
 //import Parent from './Component/Class/Parent';
 //import logo from './logo.svg';
@@ -21,7 +22,9 @@ const App = () => {
     <switch >
       <Route exact path="/"component={HomePage}/> 
       <Route exact path="/about"component={About}/>
-      <Route exact path="/detail/:id"component={DetailComp}/>
+      <Route exact path="/mahasiswa"component={ListComp}/>
+
+      {/* <Route exact path="/detail/:id"component={DetailComp}/> */}
       </switch> 
 
       </BrowserRouter>
