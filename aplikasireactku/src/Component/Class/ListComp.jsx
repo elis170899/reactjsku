@@ -96,7 +96,7 @@ class ListComp extends PureComponent {
                                         
                                     </Link>
                                     <span> </span>
-                                    <button onClick={()=> this.DeleteMahasiswa(mahasiswa.id_mahasiswa)} color="danger">Hapus</button>
+                                    <Button color="danger" onClick={()=> this.DeleteMahasiswa(mahasiswa.id_mahasiswa)}>Hapus</Button>
                                 </td>
                             </tr>
                         )}
