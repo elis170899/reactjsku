@@ -3,7 +3,7 @@ import React from 'react'
 import Produk from '../Class/Produk';
 
 const Home = () => {
-    return <div>
+    return <div className>
         {
             <div>
             <Produk nama="Macbook Pro 2019" stock="10" harga="53.000.000"/>

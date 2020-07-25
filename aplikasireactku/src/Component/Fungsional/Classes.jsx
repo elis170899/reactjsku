@@ -1,26 +1,32 @@
 import React from 'react'
 import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
 import './CSS/HomePage.css';
+import './CSS/Classes.css';
 import CardComp from './CardComp';
 import { CartContext } from '../../CartContext';
 import { useContext } from 'react';
 
 
-function HomePage() {
+function Classes() {
     return (
         <div div className="back" >
             <Jumbotron>
-                <div className="imageatas">
-                    <img src="https://bbk12e1-cdn.myschoolcdn.com/622/photo/orig_photo600484_5855918.jpg?w=1460" alt="" />
-                    <h1 className="display-4"></h1>
-                    <h1 className="judul" >Ciptakan Harmony Milikmu</h1>
-                    <p className="lead">Tiap orang berhak memiliki edukasi musik</p>
-                    <p className="belajar">
-                        <Button color="primary">MULAI BELAJAR!</Button>
+                <div>
+                    <img src="https://bbk12e1-cdn.myschoolcdn.com/572/photo/orig_photo795541_6110134.png?w=1460" alt="" />
+                    <hr />
+                    <p className="belajar1">
+                        <h1 className="display-4"></h1>
+                        <h1 className="judul2" >CLASSES</h1>
+                        <Button color="primary">Kids</Button>{' '}
+                        <Button color="warning">Teens</Button>{' '}
+                        <Button color="success">Adults</Button>{' '}
+                        <Button color="danger">Private Lessons</Button>{' '}
                     </p>
                 </div>
             </Jumbotron>
             <Container>
+                <h1 className="display-4"></h1>
+                <h1 className="judul1" >MUSICAL INSTRUMENS</h1>
                 <Row>
                     <Col><CardComp id="1" judul="Edita Uli" tanggal="Orangtua" /></Col>
                     <Col><CardComp id="2" judul="Thomson Enderson" tanggal="Orangtua" /></Col>
@@ -41,4 +47,4 @@ function HomePage() {
 
     )
 }
-export default HomePage
+export default Classes

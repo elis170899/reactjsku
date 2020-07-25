@@ -10,10 +10,12 @@ function CardComp(props) {
         <div>
             <Card>
                 <CardImg top width="100%" src="http://placeimg.com/640/480/any" alt="Card image cap" />
+                <hr/>
+                <CardImg top width="100%" src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701288847.jpg?w=1460" alt="Card image cap" />
                 <CardBody>
                     <CardTitle><h3>{props.judul}</h3></CardTitle>
                     <CardSubtitle>{props.tanggal}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <CardText>Saya sangat puas membawa anak saya kursus di tempat ini.</CardText>
                     <Button>
                         <Link to={
                             {

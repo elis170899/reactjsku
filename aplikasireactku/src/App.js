@@ -18,6 +18,11 @@ import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
 import HookReducer from './Component/Hooks/Functional/HookReducer';
 import Tagihan from './Component/Fungsional/Tagihan';
+import Classes from './Component/Fungsional/Classes';
+import Teachers from './Component/Fungsional/Teachers';
+import Gallery from './Component/Fungsional/Gallery';
+import Contact from './Component/Fungsional/Contact';
+import Login from './Component/Fungsional/Login';
 
 export const keranjangContext = createContext()
 
@@ -66,15 +71,12 @@ const App = () => {
         <switch >
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/mahasiswa" component={ListComp} />
-          <Route exact path="/mahasiswa/tambah" component={TambahComp} />
-          <Route exact path="/mahasiswa/edit" component={EditComp} />
-          <Route exact path="/kelas" component={KelasComp} />
-          <Route exact path="/hooks" component={HooksComp} />
-          <Route exact path="/useeffects" component={HooksUseEffects} />
-          <Route exact path="/produk" component={ProductComp} />
-          <Route exact path="/reducer" component={HookReducer} />
-          <Route exact path="/tagihan" component={Tagihan} />
+          <Route exact path="/classes" component={Classes} />
+          <Route exact path="/teachers" component={Teachers} />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={Login} />
+
 
           {/* <Route exact path="/detail/:id"component={DetailComp}/> */}
         </switch>

@@ -1,0 +1,26 @@
+.judul1{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+    background-color: rgb(128, 42, 128);
+
+}
+
+.judul2{
+    color:rgb(50, 73, 206);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px
+
+}
+
+.belajar1{
+    text-align: center;
+    font-weight: bold;
+}

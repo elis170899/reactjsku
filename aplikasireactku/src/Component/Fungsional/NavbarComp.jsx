@@ -14,7 +14,7 @@ import {
     Button
 } from 'reactstrap';
 
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
 import { CartContext } from '../../CartContext';
 
@@ -23,48 +23,37 @@ const NavbarComp = (props) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    const {value, setValue} = useContext(CartContext)
+    const { value, setValue } = useContext(CartContext)
 
     return (
         <div>
             <Navbar color="light" light expand="md">
-                <NavbarBrand to="/">reactstrap</NavbarBrand>
+                <NavbarBrand to="/">HARMONY MUSIC COURSE</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink to="/" className="nav-link">Home</NavLink>
+                            <NavLink to="/" className="nav-link">HOME</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/about" className="nav-link">About</NavLink>
+                            <NavLink to="/about" className="nav-link">ABOUT US</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/mahasiswa" className="nav-link">Mahasiswa</NavLink>
+                            <NavLink to="/classes" className="nav-link">CLASSES</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/kelas" className="nav-link">Class</NavLink>
+                            <NavLink to="/teachers" className="nav-link">TEACHERS</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/hooks" className="nav-link">Hook</NavLink>
+                            <NavLink to="/gallery" className="nav-link">GALLERY</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/useeffects" className="nav-link">Use Effects</NavLink>
+                            <NavLink to="/contact" className="nav-link">CONTACT US</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/produk" className="nav-link">Produk</NavLink>
+                            <NavLink to="/login" className="nav-link">LOGIN</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink to="/reducer" className="nav-link">Reducer</NavLink>
-                        </NavItem>
-
                     </Nav>
-
-                    <NavbarText>
-                        <Button color= "danger">
-                            <i className="fa fa-shopping-cart"></i>
-                            <span className="badge badge-light">{value}</span>
-                        </Button>
-                    </NavbarText>
                 </Collapse>
             </Navbar>
         </div>

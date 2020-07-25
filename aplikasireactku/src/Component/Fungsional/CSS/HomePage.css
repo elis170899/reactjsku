@@ -1,0 +1,36 @@
+.judul{
+    color:rgba(235, 68, 235, 0.904);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.lead{
+    color: rgb(206, 44, 44);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.belajar{
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer1{
+    text-align: justify;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-top: 30px
+}
+
+.footer2{
+    text-align: center;
+    font-weight: bold;
+    padding-left: 30px;
+
+}
+
+
