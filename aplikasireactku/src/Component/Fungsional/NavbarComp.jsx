@@ -6,24 +6,19 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     NavbarText,
-    Button
+    Button,
 } from 'reactstrap';
 
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
-import { CartContext } from '../../CartContext';
+import { AuthContext } from '../../App';
 
-const NavbarComp = (props) => {
+    function NavbarComp () {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
-    const { value, setValue } = useContext(CartContext)
 
     return (
         <div>
@@ -51,7 +46,10 @@ const NavbarComp = (props) => {
                             <NavLink to="/contact" className="nav-link">CONTACT US</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/login" className="nav-link">LOGIN</NavLink>
+                            <NavLink to="/datasiswa" className="nav-link">DATA SISWA</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink to="/loginadmin" className="nav-link">LOGIN</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>

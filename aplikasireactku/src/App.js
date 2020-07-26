@@ -1,5 +1,5 @@
 import React, {useState, createContext, useReducer} from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 //import BootstrapComp from './Component/Class/BootstrapComp';
 import NavbarComp from './Component/Fungsional/NavbarComp';
 import HomePage from './Component/Fungsional/HomePage';
@@ -16,39 +16,43 @@ import HooksComp from './Component/Hooks/Functional/HookComp';
 import HooksUseEffects from './Component/Hooks/Functional/HooksUseEffects';
 import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
-import HookReducer from './Component/Hooks/Functional/HookReducer';
-import Tagihan from './Component/Fungsional/Tagihan';
+//import HookReducer from './Component/Hooks/Functional/HookReducer';
+//import Tagihan from './Component/Fungsional/Tagihan';
 import Classes from './Component/Fungsional/Classes';
 import Teachers from './Component/Fungsional/Teachers';
 import Gallery from './Component/Fungsional/Gallery';
 import Contact from './Component/Fungsional/Contact';
-import Login from './Component/Fungsional/Login';
+//import Login from './Component/Fungsional/Login';
+import LoginComp from './Component/Hooks/LoginComp';
 
-export const keranjangContext = createContext()
+export const AuthContext = createContext()
 
-const initialState = {
-  jumlah : 1,
-  hargasatuan : 10000,
-  hargatotal : 10000
+//inisiasi state
+const initalState = {
+isAuthenticated: false,
+user: null,
+token: null
 }
 
-const reducer = (state,action) => {
-  switch (action. type) {
-      case 'tambah': return {
-          ...state,
-          jumlah: state.jumlah + 1,
-          hargatotal: state.hargasatuan + (state.hargasatuan * state.jumlah )
-      }
-      case 'kurang' : return {
-          ...state,
-          jumlah: state.jumlah - 1,
-          hargatotal: (state.hargasatuan + state.jumlah) - state.hargasatuan
-      }
-      default :
-          return state
+const reducer = (state, action) => {
+  switch(action.type) {
+    case "LOGIN":
+      localStorage.setItem("user", JSON.stringify(action.payload.user))
+      localStorage.setItem("token", JSON.stringify(action.payload.token))
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: action.payload.user,
+        token: action.payload.token
+        }
+
+case "LOGOUT":
+  localStorage.clear()
+  return {
+    ...state,
+    isAuthenticated: false,
+    user : null
   }
-}
-
 
 //import Parent from './Component/Class/Parent';
 //import logo from './logo.svg';
@@ -56,32 +60,57 @@ const reducer = (state,action) => {
 //import Beranda from './Component/Class/Beranda';
 //import './App.css';
 
-const App = () => {
+default:
+  return state
+} 
+}
 
-  const [value, setValue] = useState(0)
 
-  const[count,dispatch] = useReducer(reducer, initialState)
+function App () {
+
+const[state, dispatch] = useReducer(reducer, initalState)
+
 
   return (
     <BrowserRouter >
-      <CartContext.Provider value={{value, setValue}}>
-
         <NavbarComp />
-        <keranjangContext.Provider value={{keranjangState: count, keranjangDispatch:dispatch}}>
         <switch >
+        <AuthContext.Provider value= {{
+          state,
+          dispatch
+        }}>
+
+          {!state.isAuthenticated ?
+            <Redirect
+              to={{
+                pathname: "/loginadmin"
+              }}
+            /> :
+            <Redirect
+              to={{
+                pathname: "/datasiswa"
+
+              }}
+            />
+          }
+
+
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/classes" component={Classes} />
           <Route exact path="/teachers" component={Teachers} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/loginadmin" component={LoginComp} />
+          <Route exact path="/datasiswa" component={ListComp} />
+          <Route exact path="/datasiswa/tambah" component={TambahComp} />
+          <Route exact path="/datasiswa/edit" component={EditComp} />
+
 
 
           {/* <Route exact path="/detail/:id"component={DetailComp}/> */}
+          </AuthContext.Provider>
         </switch>
-        </keranjangContext.Provider>
-      </CartContext.Provider>
     </BrowserRouter>
 
 
