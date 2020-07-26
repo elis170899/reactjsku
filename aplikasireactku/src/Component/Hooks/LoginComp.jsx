@@ -114,4 +114,4 @@ function LoginComp() {
         </Fragment>
     )
 }
-export default LoginComp; 
+export default LoginComp;

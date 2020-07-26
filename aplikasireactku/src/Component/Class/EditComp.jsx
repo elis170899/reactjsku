@@ -31,7 +31,7 @@ class EditComp extends PureComponent {
         this.setState({[e.target.name] : e.target.value })
     }
 
-    ubahSiswa = (idsiswa) => {
+    ubahsiswa = (idsiswa) => {
         const data = qs.stringify({
             id_siswa: idsiswa,
             nama: this.state.nama,
@@ -154,7 +154,7 @@ class EditComp extends PureComponent {
                     <FormGroup>
                         <Row>
                             <Col>
-                                <Button type="button" onClick={()=>this.ubahSiswa(this.state.id_siswa)}>Update</Button>
+                                <Button type="button" onClick={()=>this.ubahsiswa(this.state.id_siswa)}>Update</Button>
                             </Col>
                         </Row>
                     </FormGroup>

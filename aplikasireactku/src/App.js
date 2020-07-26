@@ -103,7 +103,7 @@ const[state, dispatch] = useReducer(reducer, initalState)
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/loginadmin" component={LoginComp} />
           <Route exact path="/datasiswa" component={ListComp} />
-          <Route exact path="/datasiswa/tambah" component={TambahComp} />
+          <Route exact path="/siswa/tambah" component={TambahComp} />
           <Route exact path="/datasiswa/edit" component={EditComp} />
 
 

@@ -9,7 +9,6 @@ class TambahComp extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id_siswa: '',
             nama: '',
             tempat_lahir: '',
             tgl_lahir: '',
@@ -31,7 +30,6 @@ class TambahComp extends Component {
 
     Addsiswa = () => {
         axios.post(api+'/tambah', {
-            id_siswa: this.state.id_siswa,
             nama: this.state.nama,
             tempat_lahir: this.state.tempat_lahir,
             tgl_lahir: this.state.tgl_lahir,
@@ -58,20 +56,12 @@ class TambahComp extends Component {
     render () {
         return (
             <Container>
-                <h4>Form Edit Data</h4>
+                <h4>Form Tambah Data</h4>
                 <Alert color="success" style={{display: this.state.display}}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                 <Col>
-                    <Label>ID Siswa</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="id_siswa" value={this.state.id_siswa} onChange={this.handleChange} placeholder="Masukan ID Siswa"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
                     <Label>Nama Lengkap</Label>
                     <FormGroup>
                         <Row>
