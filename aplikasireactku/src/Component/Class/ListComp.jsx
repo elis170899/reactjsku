@@ -61,7 +61,7 @@ class ListComp extends PureComponent {
                 <Alert color="success" style={{display: this.state.display}}>
                     {this.state.response}
                 </Alert>
-                <NavLink href="/siswa/tambah"><Button color="success">Tambah Data</Button></NavLink>
+                <Link to="/siswa/tambah" button type="submit" class="btn btn-primary btn-block">TAMBAH   DATA</Link>
                 <hr />
                 <Table className="table-bordered">
                     <thead>
@@ -118,9 +118,12 @@ class ListComp extends PureComponent {
                                     <Button color="danger" onClick={()=> this.DeleteSiswa(siswa.id_siswa)}>Hapus</Button>
                                 </td>
                             </tr>
+                            
                         )}
                     </tbody>
                 </Table>
+                <br/>
+                 
             </Container>
         )
     }

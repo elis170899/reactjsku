@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import axios from 'axios'
-import {Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button} from 'reactstrap'
-import {Link} from 'react-router-dom'
+import { Container, Col, Row, Form, FormGroup, Alert, Label, Input, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 const api = 'http://localhost:4000'
 
@@ -25,11 +25,11 @@ class TambahComp extends Component {
     }
 
     handleChange = (e) => {
-        this.setState({[e.target.name] : e.target.value })
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     Addsiswa = () => {
-        axios.post(api+'/tambah', {
+        axios.post(api + '/tambah', {
             nama: this.state.nama,
             tempat_lahir: this.state.tempat_lahir,
             tgl_lahir: this.state.tgl_lahir,
@@ -40,12 +40,12 @@ class TambahComp extends Component {
             music_groups: this.state.music_groups,
             kelas: this.state.kelas
         }).then(json => {
-            if(json.data.status === 200){
+            if (json.data.status === 200) {
                 this.setState({
                     response: json.data.values,
                     display: 'block'
                 })
-            }else {
+            } else {
                 this.setState({
                     response: json.data.values,
                     display: 'block'
@@ -53,96 +53,96 @@ class TambahComp extends Component {
             }
         })
     }
-    render () {
+    render() {
         return (
             <Container>
                 <h4>Form Tambah Data</h4>
-                <Alert color="success" style={{display: this.state.display}}>
+                <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
-                <Col>
-                    <Label>Nama Lengkap</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama Lengkap"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Tempat Lahir</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="tempat_lahir" value={this.state.tempat_lahir} onChange={this.handleChange} placeholder="Masukan Tempat Lahir"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Tanggal Lahir</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="tgl_lahir" value={this.state.tgl_lahir} onChange={this.handleChange} placeholder="Masukan Tanggal Lahir"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Alamat</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="Masukan Alamat"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Nomor HP</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="no_hp" value={this.state.no_hp} onChange={this.handleChange} placeholder="Masukan No.HP"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Email</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Masukan Tempat Email"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Password</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Masukan Password"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Music Groups</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="music_groups" value={this.state.music_groups} onChange={this.handleChange} placeholder="Masukan Music Groups"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
-                    <Label>Class</Label>
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Input type="text" name="kelas" value={this.state.kelas} onChange={this.handleChange} placeholder="Masukan Class"/>
-                            </Col>
-                        </Row>
-                    </FormGroup>
+                    <Col>
+                        <Label>Nama Lengkap</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="nama" value={this.state.nama} onChange={this.handleChange} placeholder="Masukan Nama Lengkap" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Tempat Lahir</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="tempat_lahir" value={this.state.tempat_lahir} onChange={this.handleChange} placeholder="Masukan Tempat Lahir" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Tanggal Lahir</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="tgl_lahir" value={this.state.tgl_lahir} onChange={this.handleChange} placeholder="Masukan Tanggal Lahir" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Alamat</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="alamat" value={this.state.alamat} onChange={this.handleChange} placeholder="Masukan Alamat" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Nomor HP</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="no_hp" value={this.state.no_hp} onChange={this.handleChange} placeholder="Masukan No.HP" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Email</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Masukan Tempat Email" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Password</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Masukan Password" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Music Groups</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="music_groups" value={this.state.music_groups} onChange={this.handleChange} placeholder="Masukan Music Groups" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
+                        <Label>Class</Label>
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Input type="text" name="kelas" value={this.state.kelas} onChange={this.handleChange} placeholder="Masukan Class" />
+                                </Col>
+                            </Row>
+                        </FormGroup>
 
-                    
-                    <FormGroup>
-                        <Row>
-                            <Col>
-                                <Button type="button" onClick={this.Addsiswa}>Submit</Button>
-                            </Col>
-                        </Row>
-                    </FormGroup>
+
+                        <FormGroup>
+                            <Row>
+                                <Col>
+                                    <Button type="button" onClick={this.Addsiswa}>Submit</Button>
+                                </Col>
+                            </Row>
+                        </FormGroup>
                     </Col>
 
                 </Form>

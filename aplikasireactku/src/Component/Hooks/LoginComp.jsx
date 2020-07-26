@@ -66,9 +66,13 @@ function LoginComp() {
         <Fragment>
             <Container>
                 <br />
+                <div className="container" style = {{marginTop:"50px"}}>
+                <div className="row justify-content-center">
+                <div className="col-md-6">
                 <Row>
+                    
                     <Col>
-                    <Col><h2>Masuk </h2></Col>
+                    <Col sm="8" md={{ size: 'auto', offset:1 }}><h2 className="text-center">LOGIN ADMIN </h2></Col>
                         <Form onSubmit={handleformSubmit}>
                             <FormGroup>
                                 <Label for="exampleEmail">Email</Label>
@@ -108,8 +112,12 @@ function LoginComp() {
 
                         <p>Belum Punya akun? <Link to="/daftar">Daftar</Link> </p>
                     </Col>
+                    
 
                 </Row>
+                </div>
+                </div>
+                </div>
             </Container>
         </Fragment>
     )

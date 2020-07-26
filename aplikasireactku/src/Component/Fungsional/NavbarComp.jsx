@@ -6,15 +6,20 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    UncontrolledDropdown,
     NavbarText,
     Button,
+    
 } from 'reactstrap';
 
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react';
 import { AuthContext } from '../../App';
 
-    function NavbarComp () {
+function NavbarComp() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -48,9 +53,25 @@ import { AuthContext } from '../../App';
                         <NavItem>
                             <NavLink to="/datasiswa" className="nav-link">DATA SISWA</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink to="/loginadmin" className="nav-link">LOGIN</NavLink>
-                        </NavItem>
+                        {/* <NavItem> */}
+                            {/* <NavLink to="/loginadmin" className="nav-link">LOGIN</NavLink> */}
+                        {/* </NavItem> */}
+
+                        <UncontrolledDropdown >
+                            <DropdownToggle nav caret>
+                                LOGIN
+                                </DropdownToggle>
+                            <DropdownMenu right>
+                                <DropdownItem>
+                                    <NavLink to="/loginuser" className="nav-link" >SISWA</NavLink>
+
+                                </DropdownItem>
+                                <DropdownItem>
+                                    <NavLink to="/loginadmin" className="nav-link" >ADMIN</NavLink>
+                                </DropdownItem>
+
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
             </Navbar>

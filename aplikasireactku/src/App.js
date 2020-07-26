@@ -24,6 +24,8 @@ import Gallery from './Component/Fungsional/Gallery';
 import Contact from './Component/Fungsional/Contact';
 //import Login from './Component/Fungsional/Login';
 import LoginComp from './Component/Hooks/LoginComp';
+import loginuser from './Component/Hooks/Functional/loginuser';
+import daftar from './Component/Hooks/Functional/daftar';
 
 export const AuthContext = createContext()
 
@@ -105,6 +107,9 @@ const[state, dispatch] = useReducer(reducer, initalState)
           <Route exact path="/datasiswa" component={ListComp} />
           <Route exact path="/siswa/tambah" component={TambahComp} />
           <Route exact path="/datasiswa/edit" component={EditComp} />
+          <Route exact path="/loginuser" component={loginuser} />
+          <Route exact path="/daftar" component={daftar} />
+
 
 
 
