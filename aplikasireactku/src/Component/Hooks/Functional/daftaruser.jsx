@@ -2,13 +2,13 @@ import React from 'react';
 import { Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const daftar = () => {
+const daftaruser = () => {
 
         return (
             <div className="container" style = {{marginTop:"50px"}}>
                 <div className="row justify-content-center">
                         <div className="col-md-6">
-                        <Col sm="8" md={{ size: 'auto', offset: 3 }}><h2>REGISTRASI ADMIN </h2></Col>
+                        <Col sm="8" md={{ size: 'auto', offset: 3 }}><h2>REGISTRASI SISWA </h2></Col>
                             <form>
                                 <div className="form-group">
                                     <label >Nama Lengkap </label>
@@ -35,14 +35,18 @@ const daftar = () => {
                                     <input type="email" className="form-control"  placeholder="Masukan Email" />
                                 </div>
                                 <div className="form-group">
-                                    <label >Password</label>
-                                    <input type="password" className="form-control"  placeholder="Masukan Password" />
+                                    <label >Music Groups</label>
+                                    <input type="music" className="form-control"  placeholder="Masukan Pilihan Music Groups" />
+                                </div>
+                                <div className="form-group">
+                                    <label >Class</label>
+                                    <input type="kelas" className="form-control"  placeholder="Masukan Pilihan Kelas" />
                                 </div>
 
 
-                                <Link to="/loginadmin" button type="submit" class="btn btn-primary btn-block">D A F T A R</Link> 
+                                <Link to="/loginuser" button type="submit" class="btn btn-primary btn-block">D A F T A R</Link> 
 
-                                    <Link to="/loginadmin" button type="submit" class="btn btn-primary btn-block">B A T A L</Link> 
+                                    <Link to="/loginuser" button type="submit" class="btn btn-primary btn-block">B A T A L</Link> 
 
                             </form>
                         </div>
@@ -51,4 +55,4 @@ const daftar = () => {
          );
     }
 
-export default daftar; 
+export default daftaruser; 

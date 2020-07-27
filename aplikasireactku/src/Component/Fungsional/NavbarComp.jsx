@@ -50,9 +50,6 @@ function NavbarComp() {
                         <NavItem>
                             <NavLink to="/contact" className="nav-link">CONTACT US</NavLink>
                         </NavItem>
-                        <NavItem>
-                            <NavLink to="/datasiswa" className="nav-link">DATA SISWA</NavLink>
-                        </NavItem>
                         {/* <NavItem> */}
                             {/* <NavLink to="/loginadmin" className="nav-link">LOGIN</NavLink> */}
                         {/* </NavItem> */}

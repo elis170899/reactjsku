@@ -20,7 +20,7 @@ const loginuser = () => {
                                 <Link to="/" button type="submit" class="btn btn-info btn-block">M A S U K</Link> 
                                 <p>Belum Punya Akun? Silahkan Daftar Di Bawah Ini</p>  
 
-                                <Link to="/daftar" button type="submit" class="btn btn-info btn-block">D A F T A R</Link> 
+                                <Link to="/daftaruser" button type="submit" class="btn btn-info btn-block">D A F T A R</Link> 
 
                         </form>
                     </div>

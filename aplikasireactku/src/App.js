@@ -26,6 +26,7 @@ import Contact from './Component/Fungsional/Contact';
 import LoginComp from './Component/Hooks/LoginComp';
 import loginuser from './Component/Hooks/Functional/loginuser';
 import daftar from './Component/Hooks/Functional/daftar';
+import daftaruser from './Component/Hooks/Functional/daftaruser';
 
 export const AuthContext = createContext()
 
@@ -109,6 +110,7 @@ const[state, dispatch] = useReducer(reducer, initalState)
           <Route exact path="/datasiswa/edit" component={EditComp} />
           <Route exact path="/loginuser" component={loginuser} />
           <Route exact path="/daftar" component={daftar} />
+          <Route exact path="/daftaruser" component={daftaruser} />
 
 
 
